@@ -29,9 +29,21 @@ def twoSumBruteForce(array, S):
                 return [array[i],array[j]]
     return []
 
+def twoSumHashing(array, S):
+    hashtable = {}
+    
+    for x in array:
+        y = S-x
+        if (y in hashtable):
+            return [x,y]
+        else:
+            hashtable[x] = True
+    return []
+
 if __name__ == "__main__":
     array = [3,4,5,-6,12,11,10,14]
     S = 5
     
     print(twoSumBruteForce(array,S))
+    print(twoSumHashing(array,S))
  
