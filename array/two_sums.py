@@ -18,10 +18,8 @@
 # Input: nums = [3,3], target = 6
 # Output: [0,1]
 
-#----------------
-#Brute Force O(n)^2
-#----------------
 
+#Brute Force O(n)^2
 def twoSumBruteForce(array, S):
     for i in range(len(array)-1):
         for j in range(i+1,len(array)):
@@ -29,6 +27,7 @@ def twoSumBruteForce(array, S):
                 return [array[i],array[j]]
     return []
 
+#Data Structure (Dictionary) O(N)
 def twoSumHashing(array, S):
     hashtable = {}
     
@@ -40,10 +39,22 @@ def twoSumHashing(array, S):
             hashtable[x] = True
     return []
 
+#Data Structure (Set) O(N)
+def twoSumSet(array, S):
+    store = set()
+    for x in array:
+        y = S - x
+        if y in store:
+            return [x,y]
+        else:
+            store.add(x)
+    return []
+
 if __name__ == "__main__":
     array = [3,4,5,-6,12,11,10,14]
     S = 5
     
     print(twoSumBruteForce(array,S))
     print(twoSumHashing(array,S))
+    print(twoSumSet(array,S))
  
