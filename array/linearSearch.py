@@ -5,6 +5,7 @@ def search(arr,key):
             return i
     return -1
 
+#time complexity: O(N)
 if __name__ == "__main__":
     arr = [1,2,3,5,0,7,8]
     key = 1

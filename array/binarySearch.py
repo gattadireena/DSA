@@ -11,6 +11,7 @@ def bsearch(arr, target):
             left = mid + 1
     return -1
 
+#time complexity: O(log n)
 if __name__ == "__main__":
     arr = [-1,0,3,5,9,12]
     target = 90
