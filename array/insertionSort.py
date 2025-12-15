@@ -27,9 +27,9 @@
 # The number of nodes in the list is in the range [1, 5000].
 # -5000 <= Node.val <= 5000
 
-def insertSort(arr):
+# def insertSort(arr):
     
 
-if __name__ == "__main__":
-    arr = [5,3,2,1,6,0]
-    print(insertSort(arr))
+# if __name__ == "__main__":
+#     arr = [5,3,2,1,6,0]
+#     print(insertSort(arr))
