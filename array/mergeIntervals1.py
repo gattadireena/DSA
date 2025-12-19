@@ -43,7 +43,7 @@ def mergeInt(arr):
         i = j
     return ans
         
-            
+#time complexity = 0(nlogn)
 
 if __name__ == "__main__":
     arr = [[1,3],[2,6],[8,10],[15,18]]
