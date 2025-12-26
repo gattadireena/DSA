@@ -46,6 +46,8 @@ def bruteForce(arr,target):
     return [list(t) for t in st]
 
 #Better solution code
+#Time complexity: O(n^2)
+#Space complexity: O(n)+O(no.of unique)*2
 def betterSolution(arr,target):
     n = len(arr)
     st1 = set()
