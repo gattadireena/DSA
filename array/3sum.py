@@ -43,9 +43,25 @@ def bruteForce(arr,target):
                 if(arr[i]+arr[j]+arr[k] == target):
                     temp = tuple(sorted([arr[i], arr[j], arr[k]]))
                     st.add(temp)
-    return [list(t) for t in st()]
+    return [list(t) for t in st]
+
+#Better solution code
+def betterSolution(arr,target):
+    n = len(arr)
+    st1 = set()
+    for i in range(n):
+        hashset = {}
+        for j in range(i+1,n):
+            third = target - (arr[i]+arr[j])
+            if(third in hashset):
+                temp = tuple(sorted([arr[i],arr[j],third]))
+                st1.add(temp)
+            else: hashset[arr[j]] = True
+    return [list(s) for s in st1]       
+    
 
 if __name__ == "__main__":
     arr = [-1,0,1,2,-1,-4]
     target = 0
     print(bruteForce(arr,target))
+    print(betterSolution(arr,target))
