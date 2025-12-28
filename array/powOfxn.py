@@ -24,6 +24,17 @@
 # n is an integer.
 # Either x is not zero or n > 0.
 # -104 <= xn <= 104
+
+def powOfBruteforce(x,n):
+    val = 1
+    nn = n
+    if(nn<0): nn = -1*nn
+    for i in range(1,nn+1):
+        val *= x
+    if(n<0): val = 1/val
+    return val
+
+#optimal solution
 def powOf(x,n):
     val = 1
     nn = n
@@ -40,5 +51,6 @@ def powOf(x,n):
 
 if __name__ == "__main__":
     x = 2
-    n = -2
+    n = 12
     print(powOf(x,n))
+    print(powOfBruteforce(x,n))
