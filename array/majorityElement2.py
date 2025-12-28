@@ -38,6 +38,55 @@ def solution(arr):
         if(len(lst) == 2): break
     return lst
 
+#Time complexity: O(n) * O(log n)
+#space complexity: O(2)
+def optimalMethod(arr):
+    ls = []
+    hashmap = {}
+    n = len(arr)
+    mini = n//3+1
+    for i in range(n):
+        hashmap[arr[i]] = hashmap.get(arr[i],0)+1
+        if hashmap[arr[i]] == mini:
+            ls.append(arr[i])
+        if len(ls) == 2:
+            break
+    ls.sort()
+    return ls
+
+def optimalSolution(arr):
+    cnt1 = 0
+    cnt2 = 0
+    el1 = None
+    el2 = None
+    ls = []
+    n = len(arr)
+    for i in range(len(arr)):
+        if(cnt1 == 0 and arr[i] != el2):
+            cnt1 = 1
+            el1 = arr[i]
+        elif(cnt2 == 0 and arr[i] != el1):
+            cnt2 = 1
+            el2 = arr[i]
+        elif(el1 == arr[i]): cnt1 += 1
+        elif(el2 == arr[i]): cnt2 += 1
+        else: 
+            cnt1 -= 1
+            cnt2 -= 1
+    cnt1 = 0
+    cnt2 = 0
+    for i in range(len(arr)):
+        if(el1 == arr[i]): cnt1 += 1
+        if(el2 == arr[i]): cnt2 += 1
+    mini = n//3 + 1
+    if (cnt1 >= mini): ls.append(el1)
+    if (cnt2 >= mini): ls.append(el2)
+    sorted(ls)
+    return ls
+    
+
 if __name__ == "__main__":
     arr = [3,2,1,2,1]
     print(solution(arr))
+    print(optimalMethod(arr))
+    print(optimalSolution(arr))
